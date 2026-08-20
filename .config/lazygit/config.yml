@@ -1,0 +1,12 @@
+gui:
+  border: single
+  theme:
+    selectedLineBgColor:
+      - reverse
+  spinner:
+    frames:
+      - "●∙∙ |"
+      - "∙●∙ |"
+      - "∙∙● |"
+      - "∙●∙ |"
+    rate: 180

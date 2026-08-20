@@ -1,0 +1,196 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "display": {
+        "separator": " ",
+        "constants": [
+            "\u001b[s",
+            "\u001b[47C",
+            "\u001b[u",
+            "──────────────────────────────────────────────────"
+        ]
+    },
+    "logo": {
+        "position": "left",
+        "padding": {
+            "top": 2,
+            "right": 3,
+            "left": 3
+        },
+        "color": {
+            "1": "blue",
+            "2": "#FFFFFF"
+        }
+    },
+    "modules": [
+        {
+            "type": "custom",
+            "format": "\u001b[1;38;2;252;252;252m┌ Hardware ──────────────────────────────────────────────────┐\u001b[22m"
+        },
+        {
+            "type": "host",
+            "key": "│  PC    ",
+            "keyColor": "#00D3B8",
+            "keyWidth": 15,
+            "format": "{$1}{$2}│{$3}{1}",
+            "fontWeight": "bold"
+        },
+        {
+            "type": "cpu",
+            "key": "│ ├ CPU  ",
+            "keyColor": "#00D3B8",
+            "keyWidth": 15,
+            "format": "{$1}{$2}│{$3}{name} ({cores-physical}C/{cores-logical}T) @ {freq-max}",
+            "fontWeight": "bold"
+        },
+        {
+            "type": "gpu",
+            "key": "│ ├󰗘 GPU  ",
+            "keyColor": "#00D3B8",
+            "keyWidth": 15,
+            "format": "{$1}{$2}│{$3}{vendor} {name} ({type})",
+            "fontWeight": "bold"
+        },
+        {
+            "type": "memory",
+            "key": "│ ├ RAM  ",
+            "keyColor": "#00D3B8",
+            "keyWidth": 15,
+            "format": "{$1}{$2}│{$3}{used} / {total} ({percentage})",
+            "fontWeight": "bold"
+        },
+        {
+            "type": "disk",
+            "key": "│ └ Disk ",
+            "keyColor": "#00D3B8",
+            "keyWidth": 15,
+            "folders": ["/"],
+            "format": "{$1}{$2}│{$3}{size-used} / {size-total} ({size-percentage})",
+            "fontWeight": "bold"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[1;38;2;252;252;252m└────────────────────────────────────────────────────────────┘\u001b[22m"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[1;38;2;252;252;252m┌ Software ──────────────────────────────────────────────────┐\u001b[22m"
+        },
+        {
+            "type": "os",
+            "key": "│ ├󰣛 OS    ",
+            "keyColor": "#F67400",
+            "keyWidth": 15,
+            "format": "{$1}{$2}│{$3}{pretty-name}",
+            "fontWeight": "bold"
+        },
+        {
+            "type": "kernel",
+            "key": "│ ├ Kernel",
+            "keyColor": "#F67400",
+            "keyWidth": 15,
+            "format": "{$1}{$2}│{$3}{sysname} {release}",
+            "fontWeight": "bold"
+        },
+        {
+            "type": "bios",
+            "key": "│ ├󱤐 BIOS  ",
+            "keyColor": "#F67400",
+            "keyWidth": 15,
+            "format": "{$1}{$2}│{$3}{vendor} {version} {date}",
+            "fontWeight": "bold"
+        },
+        {
+            "type": "packages",
+            "key": "│ ├󰏖 Pkgs  ",
+            "keyColor": "#F67400",
+            "keyWidth": 15,
+            "format": "{$1}{$2}│{$3}{all} (rpm) + {flatpak-all} (flatpak)",
+            "fontWeight": "bold"
+        },
+        {
+            "type": "shell",
+            "key": "│ └ Shell ",
+            "keyColor": "#F67400",
+            "keyWidth": 15,
+            "format": "{$1}{$2}│{$3}{pretty-name} {version}",
+            "fontWeight": "bold"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[1;38;2;252;252;252m└────────────────────────────────────────────────────────────┘\u001b[22m"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[1;38;2;252;252;252m┌ Desktop ───────────────────────────────────────────────────┐\u001b[22m"
+        },
+        {
+            "type": "de",
+            "key": "│ ├ DE    ",
+            "keyColor": "#9B59B6",
+            "keyWidth": 15,
+            "format": "{$1}{$2}│{$3}{pretty-name} {version}",
+            "fontWeight": "bold"
+        },
+        {
+            "type": "lm",
+            "key": "│ ├ LM    ",
+            "keyColor": "#9B59B6",
+            "keyWidth": 15,
+            "format": "{$1}{$2}│{$3}{service} ({type})",
+            "fontWeight": "bold"
+        },
+        {
+            "type": "wm",
+            "key": "│ ├ WM    ",
+            "keyColor": "#9B59B6",
+            "keyWidth": 15,
+            "format": "{$1}{$2}│{$3}{pretty-name} ({protocol-name})",
+            "fontWeight": "bold"
+        },
+        {
+            "type": "terminal",
+            "key": "│ └ Term  ",
+            "keyColor": "#9B59B6",
+            "keyWidth": 15,
+            "format": "{$1}{$2}│{$3}{pretty-name} {version}",
+            "fontWeight": "bold"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[1;38;2;252;252;252m└────────────────────────────────────────────────────────────┘\u001b[22m"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[1;38;2;252;252;252m┌ Uptime / Age / DateTime ───────────────────────────────────┐\u001b[22m"
+        },
+        {
+            "type": "command",
+            "key": "│ ├ OS Age   ",
+            "keyColor": "#A1A9B1",
+            "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days",
+            "keyWidth": 15,
+            "format": "{$1}{$2}│{$3}{}",
+            "fontWeight": "bold"
+        },
+        {
+            "type": "uptime",
+            "key": "│ ├ Uptime   ",
+            "keyColor": "#A1A9B1",
+            "keyWidth": 15,
+            "format": "{$1}{$2}│{$3}{formatted}",
+            "fontWeight": "bold"
+        },
+        {
+            "type": "datetime",
+            "key": "│ └ DateTime ",
+            "keyColor": "#A1A9B1",
+            "keyWidth": 15,
+            "format": "{$1}{$2}│{$3}{year}-{month-pretty}-{day-pretty} {hour-pretty}:{minute-pretty}:{second-pretty} UTC+8",
+            "fontWeight": "bold"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[1;38;2;252;252;252m└────────────────────────────────────────────────────────────┘\u001b[22m"
+        }
+    ]
+}
