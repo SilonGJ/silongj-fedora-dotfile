@@ -1,21 +1,16 @@
-# oh-my-zsh Bureau Theme
-
-### NVM
-
-ZSH_THEME_NVM_PROMPT_PREFIX="%B⬡%b "
-ZSH_THEME_NVM_PROMPT_SUFFIX=""
+# Bureau Theme (standalone, %F{} syntax)
 
 ### Git [±master ▾●]
 
-ZSH_THEME_GIT_PROMPT_PREFIX="[%{$fg_bold[green]%}±%{$reset_color%}%{$fg_bold[white]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}]"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✓%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[cyan]%}▴%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg[magenta]%}▾%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_STAGED="%{$fg_bold[green]%}●%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg_bold[yellow]%}●%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}●%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_STASHED="(%{$fg_bold[blue]%}✹%{$reset_color%})"
+ZSH_THEME_GIT_PROMPT_PREFIX="[%B%F{green}±%f%F{white}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%f]"
+ZSH_THEME_GIT_PROMPT_CLEAN="%B%F{green}✓%f"
+ZSH_THEME_GIT_PROMPT_AHEAD="%F{cyan}▴%f"
+ZSH_THEME_GIT_PROMPT_BEHIND="%F{magenta}▾%f"
+ZSH_THEME_GIT_PROMPT_STAGED="%B%F{green}●%f"
+ZSH_THEME_GIT_PROMPT_UNSTAGED="%B%F{yellow}●%f"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%B%F{red}●%f"
+ZSH_THEME_GIT_PROMPT_STASHED="(%B%F{blue}✹%f)"
 
 bureau_git_info () {
   local ref
@@ -65,8 +60,7 @@ bureau_git_status() {
 }
 
 bureau_git_prompt() {
-  if ! command git rev-parse --git-dir &> /dev/null \
-     || [[ "$(command git config --get oh-my-zsh.hide-info 2>/dev/null)" == 1 ]]; then
+  if ! command git rev-parse --git-dir &> /dev/null; then
     return
   fi
 
@@ -86,18 +80,18 @@ bureau_git_prompt() {
 }
 
 
-_PATH="%{$fg_bold[white]%}%~%{$reset_color%}"
+_PATH="%B%F{white}%~%f"
 
 if [[ $EUID -eq 0 ]]; then
-  _USERNAME="%{$fg_bold[red]%}%n"
-  _LIBERTY="%{$fg[red]%}#"
+  _USERNAME="%B%F{red}%n"
+  _LIBERTY="%F{red}#%f"
 else
-  _USERNAME="%{$fg_bold[white]%}%n"
-  _LIBERTY="%{$fg[green]%}$"
+  _USERNAME="%B%F{white}%n"
+  _LIBERTY="%F{green}$%f"
 fi
 
-_USERNAME="$_USERNAME%{$reset_color%}@%m"
-_LIBERTY="$_LIBERTY%{$reset_color%}"
+_USERNAME="%f$_USERNAME%f@%m"
+_LIBERTY="$_LIBERTY"
 
 _1LEFT="$_USERNAME $_PATH"
 
